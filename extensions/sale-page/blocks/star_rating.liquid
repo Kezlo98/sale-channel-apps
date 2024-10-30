@@ -1,0 +1,44 @@
+<div>
+  <!-- Container to display the greeting message -->
+  <div id="greeting-message" style="font-size: 1.2em; margin-top: 10px;"></div>
+  <button onclick="testProxy()">Test Proxy</button>
+</div>
+
+<script>
+  function testProxy() {
+   return new Promise(async (resolve, reject) => {
+     console.log("Fetching template...");
+     await fetch("https://kezlo-test-2.myshopify.com/apps/anti/template"), {
+       method: "GET",
+       headers: {
+         "Content-Type": "application/json",
+         "Access-Control-Allow-Origin": "*",
+       }
+     }
+   }).then(response => response.text())
+   .then(data => {
+     console.log(data);
+   })
+    .then(data => {
+      // Extract message from returned Liquid template (simple text response in this case)
+      const greetingContainer = document.getElementById("greeting-message");
+      greetingContainer.innerHTML = data.trim(); // Expected "Hello, John!"
+    })
+    .catch(error => {
+      console.error("Error fetching template:", error);
+      const greetingContainer = document.getElementById("greeting-message");
+      greetingContainer.innerHTML = "Error loading greeting";
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Star Rating",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}
