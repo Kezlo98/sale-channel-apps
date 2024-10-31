@@ -7,8 +7,8 @@ import {data} from "@remix-run/react";
 export const loader = async ({ request }) => {
   // await authenticate.admin(request);
 
-  return json(
-    liquid({}),
+  return new Response(
+    HTML_2(),
     {
       headers: {
         "Content-Type": "application/liquid"
@@ -61,6 +61,30 @@ function HTML() {
     + '    <!-- Repeat this structure for more products -->'
     + '</div>'
   );
+}
+
+function HTML_2() {
+  return (
+    `<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 15px 0;">
+        <img src="product1.jpg" alt="Product 1" style="max-width: 100px; margin-right: 20px; border-radius: 8px;">
+        <div style="flex: 1;">
+            <p style="font-size: 1.2em; margin: 0;">Product 1</p>
+            <p style="color: #555; margin: 5px 0;">A brief description of Product 1.</p>
+            <p style="font-weight: bold; color: #333;">$19.99</p>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 15px 0;">
+        <img src="product2.jpg" alt="Product 2" style="max-width: 100px; margin-right: 20px; border-radius: 8px;">
+        <div style="flex: 1;">
+            <p style="font-size: 1.2em; margin: 0;">Product 2</p>
+            <p style="color: #555; margin: 5px 0;">A brief description of Product 2.</p>
+            <p style="font-weight: bold; color: #333;">$29.99</p>
+        </div>
+    </div>
+    <!-- Repeat this structure for more products -->
+</div>`
+  )
 }
 
 function Code()  {

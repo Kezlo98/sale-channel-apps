@@ -3,7 +3,7 @@
 client_id = "c76fcea00e6a1c35159754b076497453"
 name = "sale-channel-dev"
 handle = "sale-channel-dev"
-application_url = "https://wt-deaf-emotions-trust.trycloudflare.com"
+application_url = "https://scholarships-smoking-easier-meat.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://wt-deaf-emotions-trust.trycloudflare.com/auth/callback",
-  "https://wt-deaf-emotions-trust.trycloudflare.com/auth/shopify/callback",
-  "https://wt-deaf-emotions-trust.trycloudflare.com/api/auth/callback"
+  "https://scholarships-smoking-easier-meat.trycloudflare.com/auth/callback",
+  "https://scholarships-smoking-easier-meat.trycloudflare.com/auth/shopify/callback",
+  "https://scholarships-smoking-easier-meat.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
