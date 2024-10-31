@@ -3,7 +3,7 @@
 client_id = "c76fcea00e6a1c35159754b076497453"
 name = "sale-channel-dev"
 handle = "sale-channel-dev"
-application_url = "https://nm-childhood-message-identifying.trycloudflare.com"
+application_url = "https://wt-deaf-emotions-trust.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://nm-childhood-message-identifying.trycloudflare.com/auth/callback",
-  "https://nm-childhood-message-identifying.trycloudflare.com/auth/shopify/callback",
-  "https://nm-childhood-message-identifying.trycloudflare.com/api/auth/callback"
+  "https://wt-deaf-emotions-trust.trycloudflare.com/auth/callback",
+  "https://wt-deaf-emotions-trust.trycloudflare.com/auth/shopify/callback",
+  "https://wt-deaf-emotions-trust.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

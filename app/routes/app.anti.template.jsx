@@ -8,8 +8,8 @@ export const loader = async ({ request }) => {
   // await authenticate.admin(request);
 
   return json(
-    // '{% assign avg_rating = block.settings.product.metafields.demo.avg_rating.value | round %}<span style="color:{{ block.settings.colour }}">  {% render \'stars\', rating: avg_rating %}</span>{% if avg_rating >= 4 %}  <br>  <img src="{{ "thumbs-up.png" | asset_img_url: \'15x\' }}" height="15" width="15" loading="lazy">  {{ \'ratings.home.recommendationText\' | t }}{% endif %}',
-    Polaris(),{
+    liquid({}),
+    {
       headers: {
         "Content-Type": "application/liquid"
       }
@@ -25,6 +25,42 @@ function Polaris(){
       </Box>
     </Page>
   )
+}
+
+function liquid(product) {
+  return (
+    `{% assign products = "Product 1, Product 2, Product 3" | split: ", " %}
+{% for product_title in products %}
+  <div class="product">
+    <h2>{{ product_title }}</h2>
+    <!-- Simulate other product attributes as needed -->
+  </div>
+{% endfor %}`
+  )
+}
+
+function HTML() {
+  return(
+    '<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">'
+    + '    <div style="display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 15px 0;">'
+    + '        <img src="product1.jpg" alt="Product 1" style="max-width: 100px; margin-right: 20px; border-radius: 8px;">'
+    + '        <div style="flex: 1;">'
+    + '            <p style="font-size: 1.2em; margin: 0;">Product 1</p>'
+    + '            <p style="color: #555; margin: 5px 0;">A brief description of Product 1.</p>'
+    + '            <p style="font-weight: bold; color: #333;">$19.99</p>'
+    + '        </div>'
+    + '    </div>'
+    + '    <div style="display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 15px 0;">'
+    + '        <img src="product2.jpg" alt="Product 2" style="max-width: 100px; margin-right: 20px; border-radius: 8px;">'
+    + '        <div style="flex: 1;">'
+    + '            <p style="font-size: 1.2em; margin: 0;">Product 2</p>'
+    + '            <p style="color: #555; margin: 5px 0;">A brief description of Product 2.</p>'
+    + '            <p style="font-weight: bold; color: #333;">$29.99</p>'
+    + '        </div>'
+    + '    </div>'
+    + '    <!-- Repeat this structure for more products -->'
+    + '</div>'
+  );
 }
 
 function Code()  {
